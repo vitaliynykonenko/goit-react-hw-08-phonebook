@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Form, Input, Button } from './ContactForm.styled';
 import { useState } from 'react';
 import { getContacts } from 'redux/selectors';
-import { notifyContactsRejected } from 'components/services';
+import { Notify } from 'notiflix';
 import { addContact } from 'redux/operations';
 
 export const ContactForm = () => {
@@ -27,13 +27,15 @@ export const ContactForm = () => {
         contact => contact.name.toLowerCase() === name.toLowerCase()
       )
     ) {
-      notifyContactsRejected(name);
+            Notify.failure(`Contact '${name}' is already exist`);
+   
     } else {
       dispatch(addContact(contact));
     }
     setName('');
     setPhoneNumber('');
   };
+
 
   return (
     <Form onSubmit={handleSubmit}>

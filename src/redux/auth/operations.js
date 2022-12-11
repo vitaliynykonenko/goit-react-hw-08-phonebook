@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { notifyAuthRejected } from 'components/services';
+import { Notify } from 'notiflix';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
@@ -33,7 +33,7 @@ export const logIn = createAsyncThunk(
       setAuthHeader(res.data.token);
       return res.data;
     } catch (error) {
-      notifyAuthRejected();
+      Notify.failure(`Enter valid login or password`);
       return thunkAPI.rejectWithValue(error.message);
     }
   }

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Form = styled.form`
-padding: 20px;
+padding: 10px;
   max-width: 480px;
 `
 export const Input = styled.input`
