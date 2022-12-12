@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact } from 'redux/operations';
-import { getContacts, getFilter, getLoading } from 'redux/selectors';
+import { deleteContact } from 'redux/contacts/operations';
+import { getContacts, getFilter, getLoading } from 'redux/contacts/selectors';
 import { List, Item, Text, Button } from './ContactList.styled';
 import { Loader } from 'components/Phonebook/Loader/Loader';
 

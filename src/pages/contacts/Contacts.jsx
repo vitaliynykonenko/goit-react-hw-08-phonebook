@@ -4,7 +4,7 @@ import { Container } from 'components/Phonebook/container';
 import Filter from 'components/Phonebook/Filter/Filter';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchContacts } from 'redux/operations';
+import { fetchContacts } from 'redux/contacts/operations';
 import { Section, H1, H2 } from './contacts.styled';
 
 
